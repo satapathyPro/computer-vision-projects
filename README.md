@@ -1,40 +1,110 @@
 # Computer Vision Projects
-This repository hosts a collection of computer vision projects using deep learning techniques, focusing on various real-world applications. Each project is designed to demonstrate the power of transfer learning and convolutional neural networks (CNN) in solving practical problems. Here's what you'll find in this repository:
 
-## Project Highlights:
+![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=flat&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat&logo=jupyter&logoColor=white)
 
-- **Cataract Detection:**
-  Detect cataracts in eye images using pre-trained models and fine-tuning.
+A curated collection of computer vision projects that apply **transfer learning** and **convolutional neural networks (CNNs)** to real-world classification and detection tasks — spanning medical imaging, autonomous driving, and safety-critical applications.
 
-- **Traffic Sign Detection:**
-Identify and classify traffic signs from images for improved road safety.
+---
 
-- **Pneumonia Detection:**
-Utilize deep learning to diagnose pneumonia from chest X-ray images.
+## Projects
 
-- **Emotion Detection:**
-Build models to recognize and classify emotions from facial expressions.
+| Project | Task | Architecture / Model | Accuracy |
+|---|---|---|---|
+| Cataract Detection | Binary classification (cataract vs. normal) | Pretrained CNN + fine-tuning | See notebook |
+| Traffic Sign Classification | Multi-class classification (43 classes) | CNN / Transfer Learning | See notebook |
+| Pneumonia Detection | Binary classification from chest X-rays | Pretrained CNN + fine-tuning | See notebook |
+| Driver Drowsiness Detection | Binary classification (drowsy vs. alert) | Transfer Learning + Parallel Conv Architecture | See notebook |
+| Eye Disease Classification | Multi-class eye disease diagnosis | CNN with Parallel Convolution Architecture | See notebook |
+| Emotion Detection | Multi-class facial emotion recognition | CNN | See notebook |
+| MNIST Digit Classification | 10-class digit recognition | Custom CNN | See notebook |
+| Lane Detection | Lane segmentation for autonomous vehicles | Computer vision pipeline (OpenCV) | — |
+| Object Detection (YOLOv3) | Real-time multi-class object detection | YOLOv3 | See notebook |
 
-- **MNIST Digit Classification:**
-Develop a model to classify handwritten digits from the MNIST dataset, a fundamental task for beginners in computer vision.
+---
 
-- **Driver Drowsiness Detection:**
-  Enhance road safety with Driver Drowsiness Detection! Utilize Transfer Learning and Convolutional Neural Networks with Parallel Convolution Architecture to identify and classify driver drowsiness.
+## Why Transfer Learning?
 
-- **Eye Diseases:**
-    Contribute to healthcare with a deep learning project focused on classifying eye diseases. Employ Convolutional Neural Networks (CNNs), including those with a Parallel Convolution Architecture, for accurate disease classification.
+Training deep CNN models from scratch requires millions of labeled images and significant compute. **Transfer learning** sidesteps this by starting from a model already pretrained on a large dataset (e.g., ImageNet) and fine-tuning it on a smaller, domain-specific dataset.
 
-- **Lane Detection for Autonomous Vehicles:**
-    Contribute to the development of autonomous vehicles with a lane detection algorithm using computer vision techniques. Highlight detected lanes on the road, providing a visual representation crucial for vehicle navigation and safety.
+This is especially valuable in:
 
-- **Object Detection Using YOLOv3:**
-  Experience the speed and accuracy of the YOLOv3 algorithm for real-time object detection. This repository provides code for implementing object detection and showcases the versatility of YOLOv3 in identifying and tracking various objects.
+- **Medical imaging** (cataract detection, pneumonia detection, eye disease classification) — labeled medical data is scarce and expensive to annotate.
+- **Traffic / safety tasks** (traffic sign detection, driver drowsiness) — pretrained feature extractors generalize well to new visual domains with minimal data.
+
+The result: faster convergence, better generalization, and state-of-the-art accuracy even with limited training samples.
+
+---
+
+## Results
+
+Performance metrics for each project are reported in their respective notebooks. Key highlights:
+
+- **Cataract Detection** — Binary classifier trained on fundus images; fine-tuned pretrained backbone. See notebook for confusion matrix and ROC curve.
+- **Traffic Sign Classification** — 43-class classifier on the GTSRB dataset using transfer learning. See notebook for per-class accuracy breakdown.
+- **Pneumonia Detection** — Chest X-ray binary classifier. Fine-tuned pretrained model on NIH / Kaggle pneumonia dataset. See notebook for sensitivity/specificity metrics.
+- **Driver Drowsiness Detection** — Real-time classification using a parallel convolution architecture for improved multi-scale feature extraction.
+- **Eye Disease Classification** — Multi-class CNN with parallel convolution branches for diabetic retinopathy, glaucoma, and other conditions.
+- **YOLOv3 Object Detection** — Real-time multi-object detection with bounding box regression and class confidence scores.
+
+> All experiments are implemented as self-contained Jupyter notebooks with inline visualizations and metric summaries.
+
+---
+
+## Repository Structure
+
+```
+computer-vision-projects/
+├── cataract-detection/
+├── traffic-sign-detection/
+├── pneumonia-detection/
+├── driver-drowsiness-detection/
+├── eye-diseases/
+├── emotion-detection/
+├── mnist-digit-classification/
+├── lane-detection/
+└── object-detection-yolov3/
+```
+
+---
+
+## Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/satapathyPro/computer-vision-projects.git
+cd computer-vision-projects
+
+# Install dependencies
+pip install torch torchvision tensorflow opencv-python matplotlib numpy scikit-learn jupyter
+
+# Open a project notebook
+jupyter notebook cataract-detection/
+```
+
+Each project folder contains its own notebook with dataset instructions, model training code, and evaluation results.
+
+---
+
+## Tech Stack
+
+| Tool | Purpose |
+|---|---|
+| PyTorch / TensorFlow | Model training and transfer learning |
+| OpenCV | Image preprocessing and computer vision pipelines |
+| Jupyter Notebook | Interactive experimentation and visualization |
+| scikit-learn | Metrics, evaluation, and data splitting |
+| Matplotlib / Seaborn | Result visualization |
+
+---
 
 ## Maintainer
-This project is maintained by Subham Satapathy.
 
-Subham is a Software Engineer with over 6 years of professional experience building cloud-scale distributed systems and machine learning pipelines. With expertise in Python, PyTorch, and TensorFlow, he focuses on developing robust computer vision solutions and production-ready AI automation.
+**Subham Satapathy** — Software Engineer with 6+ years of experience building cloud-scale distributed systems and machine learning pipelines. Specializes in computer vision, PyTorch, TensorFlow, and production-ready AI automation.
 
-- GitHub: https://github.com/satapathyPro
-- LinkedIn: https://www.linkedin.com/in/subhamumd/
+- GitHub: [satapathyPro](https://github.com/satapathyPro)
+- LinkedIn: [subhamumd](https://www.linkedin.com/in/subhamumd/)
 - Email: satapathypro@gmail.com
